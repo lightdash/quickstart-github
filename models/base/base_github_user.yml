@@ -1,0 +1,75 @@
+version: 2
+models:
+  - name: base_github_user
+    description: ""
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: _fivetran_synced
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: bio
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: blog
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: company
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: created_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: hireable
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: location
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: login
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: site_admin
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: updated_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: contributor_created_date
+        description: ""
+        meta:
+          dimension:
+            type: date

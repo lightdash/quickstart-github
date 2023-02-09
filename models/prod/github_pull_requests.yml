@@ -1,0 +1,159 @@
+version: 2
+models:
+  - name: github_pull_requests
+    columns:
+      - name: id
+        description: Unique ID for the pull request
+        meta:
+          dimension:
+            type: string
+            urls:
+              - label: Open in Github
+                url: "https://github.com/${row.github_pull_requests.repository.raw}/pull/${row.github_pull_requests.pull_request_number.raw}"
+          metrics:
+            pr_count:
+              description: Total count of unique pull requests (PRs)
+              label: PR count
+              type: count_distinct
+              show_underlying_values:
+                - id
+                - repository
+                - pull_request_number
+                - state
+                - merged_at
+                - title
+            open_prs:
+              label: Open PRs
+              description: Count of all open pull requests (PRs)
+              type: count_distinct
+              filters:
+                - state: open
+              show_underlying_values:
+                - id
+                - repository
+                - pull_request_number
+                - merged_at
+                - title
+            closed_prs:
+              label: Closed PRs
+              description: Count of all closed pull requests (PRs)
+              type: count_distinct
+              filters:
+                - state: closed
+              show_underlying_values:
+                - id
+                - repository
+                - pull_request_number
+                - merged_at
+                - title
+            merged_prs:
+              label: Merged PRs
+              description: Count of all merged pull requests (PRs)
+              type: count_distinct
+              filters:
+                - is_merged: true
+              show_underlying_values:
+                - id
+                - repository
+                - pull_request_number
+                - merged_at
+                - title
+      - name: closed_at
+        description: Time that the pull request was closed (may or may not be merged)
+        meta:
+          dimension:
+            type: timestamp
+      - name: created_at
+        description: Time that the pull request was first created
+        meta:
+          dimension:
+            type: timestamp
+      - name: pull_request_number
+        description: Pull request number on the repository
+        meta:
+          dimension:
+            type: string
+            urls:
+              - label: Open in Github
+                url: "https://github.com/${row.github_pull_requests.repository.raw}/pull/${row.github_pull_requests.pull_request_number.raw}"
+      - name: state
+        description: Open or closed
+        meta:
+          dimension:
+            type: string
+      - name: title
+        description: Title of the pull request
+        meta:
+          dimension:
+            type: string
+      - name: updated_at
+        description: Time that the pull request was last updated
+        meta:
+          dimension:
+            type: timestamp
+      - name: repository
+        description: "Full name of the repository containing the pull request"
+        meta:
+          dimension:
+            type: string
+      - name: url_link
+        description: "Link to the pull request on github.com"
+        meta:
+          dimension:
+            hidden: true
+            type: string
+            urls:
+              - label: Open on Github.com
+                url: "${ value.raw }"
+      - name: merged_at
+        description: "Time that the pull request was merged (will be null if not merged)"
+        meta:
+          dimension:
+            type: timestamp
+      - name: is_merged
+        description: "True/false whether the pull request has been merged"
+        meta:
+          dimension:
+            type: boolean
+      - name: cycle_time_hours
+        label: Cycle time
+        description: "The code cycle time (in hours), time from the pull request was first created and when it was finally merged. Null if never merged."
+        meta:
+          dimension:
+            type: number
+            round: 2
+          metrics:
+            average_cycle_time:
+              description: "Average time (hours) from pull request creation to merged. Ignores pull requests that haven't been merged."
+              type: average
+              round: 2
+      - name: merged_by
+        description: "Login name of the github user that merged the pull request"
+        meta:
+          dimension:
+            type: string
+            group_label: Merging user
+      - name: created_by
+        description: "Login name of the github user that opened the pull request"
+        meta:
+          dimension:
+            type: string
+            group_label: Creator
+      - name: creator_type
+        description: "Bot/User/Organization for the user that opened the pull request"
+        meta:
+          dimension:
+            type: string
+            group_label: Creator
+      - name: merger_type
+        description: "Bot/User/Organization for the user that merged the pull request"
+        meta:
+          dimension:
+            type: string
+            group_label: Merging user
+      - name: created_by_lightdash_team
+        description: "Whether the creator is currently a lightdash team member"
+        meta:
+          dimension:
+            type: boolean
+            group_label: Creator

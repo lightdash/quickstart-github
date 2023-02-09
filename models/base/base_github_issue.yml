@@ -1,0 +1,75 @@
+version: 2
+models:
+  - name: base_github_issue
+    description: ""
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: _fivetran_synced
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: body
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: closed_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: created_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: locked
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: milestone_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: number
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pull_request
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: repository_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: state
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: title
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: updated_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: user_id
+        description: "{{doc(\"user_id\")}}"
+        meta:
+          dimension:
+            type: number

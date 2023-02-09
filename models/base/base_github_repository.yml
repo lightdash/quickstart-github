@@ -1,0 +1,74 @@
+version: 2
+models:
+  - name: base_github_repository
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: _fivetran_synced
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: archived
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: created_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: default_branch
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: description
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fork
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: full_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: homepage
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: language
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: owner_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: private
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: stargazers_count
+        description: ""
+        meta:
+          dimension:
+            type: number

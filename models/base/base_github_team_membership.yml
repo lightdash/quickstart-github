@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: base_github_team_membership
+    description: ""
+    columns:
+      - name: team_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_id
+        description: "{{doc(\"user_id\")}}"
+        meta:
+          dimension:
+            type: number
+      - name: _fivetran_synced
+        description: ""
+        meta:
+          dimension:
+            type: timestamp

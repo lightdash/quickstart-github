@@ -1,0 +1,80 @@
+version: 2
+models:
+  - name: base_github_pull_request
+    description: ""
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: _fivetran_synced
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: base_label
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: base_ref
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: base_repo_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: base_sha
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: base_user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: draft
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: head_label
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: head_ref
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: head_repo_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: head_sha
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: head_user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: issue_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: merge_commit_sha
+        description: ""
+        meta:
+          dimension:
+            type: string

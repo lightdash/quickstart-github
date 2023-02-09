@@ -1,0 +1,45 @@
+version: 2
+models:
+  - name: base_github_team
+    description: ""
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: _fivetran_synced
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: description
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: org_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: parent_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: privacy
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: slug
+        description: ""
+        meta:
+          dimension:
+            type: string

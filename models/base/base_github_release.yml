@@ -1,0 +1,75 @@
+version: 2
+models:
+  - name: base_github_release
+    description: ""
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: _fivetran_deleted
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: _fivetran_synced
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: author_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: body
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: created_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: draft
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: prerelease
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: published_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: repository_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: tag_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: target_commitish
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: updated_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp

@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: stg_github_issue_labels_for_tracking
+    description: ""
+    columns:
+      - name: issue_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: label_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: label_name
+        description: ""
+        meta:
+          dimension:
+            type: string

@@ -1,0 +1,40 @@
+version: 2
+models:
+  - name: base_github_label
+    description: ""
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: _fivetran_synced
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: color
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: description
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: is_default
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: url
+        description: ""
+        meta:
+          dimension:
+            type: string
